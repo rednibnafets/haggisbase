@@ -1,4 +1,4 @@
-package database;
+package Database.RDBMS.src.database;
 
 import java.util.ArrayList;
 
@@ -6,8 +6,11 @@ import java.util.ArrayList;
  *
  * @author Louis Henry
  */
-public class ChildTable extends Table implements TableInterface{
-    
+// avoid
+// public class ChildTable extends Table implements TableInterface{
+//
+// use
+public class ChildTable extends Table {
     public int foreignKey;
        
     //Default ctor
@@ -35,12 +38,14 @@ public class ChildTable extends Table implements TableInterface{
     }
     
     @Override
-    public void select(String tableName, String statement){
+    public void select(){
+    //public void select(String tableName, String statement) {
+        //No need to pass the table name! The object "knows" the table name. 
     
     }
     
     @Override
-    public void insert(String tableName,String data){
+    public void insert(Row newRow){
     
     }
     

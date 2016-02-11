@@ -1,9 +1,9 @@
-package database;
+package Database.RDBMS.src.database;
 
 import java.util.ArrayList;
 
 /**
- * A database that stores tables containing records.
+ * A Database.RDBMS.src.database that stores tables containing records.
  *
  * @version 0.1
  * @author Louis Henry
@@ -12,7 +12,20 @@ import java.util.ArrayList;
 public class Database {
 
     public String name;
-    ArrayList tables = new ArrayList();
+    ArrayList< TableInterface > tables = new ArrayList<>();
+    
+//    public TableInterface getTable(String tableName)
+//    {
+//       TableInterface ifce = null ;
+//       for (TableInterface ti : tables )
+//       {
+//           if(ti.equals(tableName))
+//           {
+//               return ifce = ti;
+//           }
+//       }
+//       return ifce ;
+//    }
 
     public Database(String newName) {
         this.name = newName;
@@ -20,10 +33,10 @@ public class Database {
     }
 
     //Create table in Database
-    public void createTable(String type, String name, int pKey) {
+    public void createTable(String type, String name) {
         
         if (checkExists(name) == false){
-            tables.add(TableFactory.createTable(type, name, pKey));
+            tables.add(TableFactory.createTable(type, name));
             System.out.println(type + " " + name + " created.");
         } else {
             System.out.println("Please re-enter with a valid table name.");

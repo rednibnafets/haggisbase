@@ -1,4 +1,4 @@
-package database;
+package Database.RDBMS.src.database;
 
 /**
  *
@@ -6,8 +6,10 @@ package database;
  */
 public interface TableInterface {
        //Methods
-    public void select(String tableName, String statement);
-    public void insert(String tableName, String data);
+    // no need for the tableName (the table object "knows" the table name)
+    //public void select(String tableName, String statement);
+    public void select() ;  // SELECT * FROM table  -- for the time being
+    public void insert(Row newRow);
     public void update();
     public void delete();
 

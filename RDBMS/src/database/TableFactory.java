@@ -1,12 +1,12 @@
-package database;
+package Database.RDBMS.src.database;
 
 /**
  *
  * @author Louis Henry
  */
 public class TableFactory {
-
-    public static TableInterface createTable(String tableType, String tableName, int pKey) {
+    // parameter int pKey removed
+    public static TableInterface createTable(String tableType, String tableName) {
         
         if (tableType.equalsIgnoreCase("parent table")) {
             return new ParentTable(tableName);

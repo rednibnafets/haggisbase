@@ -1,4 +1,4 @@
-package database;
+package Database.RDBMS.src.database;
 
 import java.util.ArrayList;
 
@@ -10,6 +10,17 @@ public abstract class Table implements TableInterface{
     
     protected int primaryKey;
     protected String name;
-    protected ArrayList rows = new ArrayList();
+    protected ArrayList< Row > rows ;
     
+    public Table() 
+    {
+        rows = new ArrayList<>() ;
+       // default ctor
+    }
+ 
+    @Override
+    public abstract void select();    
+    
+    @Override
+    public abstract void insert(Row newRow);
 }
